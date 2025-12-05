@@ -1,0 +1,98 @@
+/* 🔥 ORQA FON – siz yuborgan rasm */
+body {
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: "Segoe UI", Arial, sans-serif;
+  margin: 0;
+  padding: 50px;
+  color: #000000;
+}
+
+/* 🟨 NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.navbar a {
+  background: #ffda08;
+  padding: 10px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+  font-size: 18px;
+  transition: 0.2s;
+}
+
+.navbar a:hover {
+  background: #f5c400;
+  transform: translateY(-2px);
+}
+
+/* 📦 CARD DIZAYN */
+.card {
+  background: #0000005d;
+  max-width: 400px;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin: 0 auto; /* Markazga qo'yish */
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #1a73e8;
+}
+
+.subtitle {
+  color: #000000;
+  margin-bottom: 10px;
+}
+
+.rating {
+  color: #fbbc04;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.section {
+  margin-top: 20px;
+}
+
+.label {
+  font-weight: 600;
+  margin-bottom: 4px;
+  display: block;
+}
+
+.contact, .address, .worktime {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.socials a {
+  text-decoration: none;
+  margin-right: 10px;
+  color: #1a73e8;
+}
+
+.btn {
+  display: inline-block;
+  background: #1a73e8;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+.btn:hover {
+  background: #1558b0;
+}

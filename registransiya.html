@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feedback Form</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="registratsiya.css">
+</head>
+<body>
+  <h1 style="color: rgb(0, 0, 0);">Registratsiya bo'limi</h1>
+  <h3 style="color: rgb(255, 0, 0);">Dorilarni bu yerdan onlline oling 😊 </h3>
+
+  <div class="form-container">
+    <p class="note"><i>💡</i> online pharmga xush kelibsiz !</p>
+
+    <form action="#">
+      <label for="name">👤 Ismingiz</label>
+      <input type="text" id="name" placeholder="Enter your name" required>
+
+      <label for="email">📧 Email Address</label>
+      <input type="email" id="email" placeholder="Enter your email" required>
+
+      <label for="phone">📞 Telefon nomeringiz</label>
+      <input type="tel" id="phone" placeholder="Enter your phone number">
+
+      <label>🟢 Siza qanday dori kerak?</label>
+      <div class="radio-group">
+        <input type="radio" name="satisfaction" id="yes" checked>
+        <label for="yes">Yes</label>
+        <input type="radio" name="satisfaction" id="no">
+        <label for="no">No</label>
+      </div>
+
+      <label for="suggestions">💬 Bu yerga dori nomini yozib bizga yuboring 😊:</label>
+      <textarea id="suggestions" rows="4" placeholder="sizga qanaqa dori kerak?"></textarea>
+
+      <button type="submit">Jo'natish</button>
+    </form>
+  </div>
+</body>
+</html>
