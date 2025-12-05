@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Cards</title>
+    
+    <style>
+        /* Umumiy Uslublar */
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .search-container {
+            padding: 20px;
+            text-align: center;
+        }
+
+        #searchInput {
+            padding: 10px;
+            width: 80%;
+            max-width: 500px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .product-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+            gap: 20px;
+        }
+
+        .product-card {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 15px;
+            width: 250px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .product-img {
+            width: 100%;
+            height: auto;
+            max-height: 180px;
+            object-fit: contain;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .product-title {
+            font-size: 1.2em;
+            margin: 10px 0;
+            height: 40px; 
+        }
+
+        .product-brand, .product-availability, .product-price {
+            margin: 5px 0;
+            font-size: 0.9em;
+            color: #555;
+        }
+
+        .dot {
+            height: 10px;
+            width: 10px;
+            background-color: #4CAF50;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 5px;
+        }
+
+        .bonus-btn {
+            background-color: #ff9800;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.8em;
+            margin: 10px 0;
+        }
+
+        .product-price b {
+            color: #E91E63;
+            font-size: 1.2em;
+        }
+
+        .buy-btn {
+            background-color: #E91E63; 
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 1em;
+            margin-top: 10px;
+        }
+
+        .buy-btn:hover {
+            background-color: #c2185b;
+        }
+
+        /* --- Modal Oyna Uslublari --- */
+        .modal {
+            display: none; 
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4); 
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto; 
+            padding: 20px;
+            border: 1px solid #888;
+            width: 90%; 
+            max-width: 400px; 
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .close-btn {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close-btn:hover,
+        .close-btn:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Forma uslublari */
+        .registration-form h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="tel"],
+        .form-group input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box; 
+        }
+
+        .submit-btn {
+            background-color: #E91E63; 
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        .submit-btn:hover {
+            background-color: #c2185b;
+        }
+    </style>
+</head>
+<body>
+<div class="search-container">
+    <input type="text" id="searchInput" placeholder="Mahsulotlarni qidirish...">
+</div>
+
+<div class="product-container">
+    <div class="product-card">
+        <img src="https://ref2.osonapteka.uz/api/ProductImage/Show/c225b5bd-cfce-4335-b379-6a2d917a8275.png" alt="Lantus" class="product-img">
+        <h3 class="product-title">Lantus</h3>
+        <p class="product-brand">Brand: Lantus</p>
+        <p class="product-availability"><span class="dot"></span> Mavjud (4)</p>
+        <button class="bonus-btn">+505 kechbek-bonus</button>
+        <p class="product-price">от <b>180,000 UZS</b></p>
+        <button class="buy-btn">Sotib olish</button>
+    </div>
+
+    <div class="product-card">
+        <img src="https://ref2.osonapteka.uz/api/ProductImage/Show/e431dbf0-a8c9-11eb-80dd-69f89e3867af.png" alt="Product Image 2" class="product-img">
+        <h3 class="product-title">Product Name 2</h3>
+        <p class="product-brand">Brand: Product 2</p>
+        <p class="product-availability"><span class="dot"></span> Mavjud (4)</p>
+        <button class="bonus-btn">+505 kechbek-bonus</button>
+        <p class="product-price">от <b>90,000 UZS</b></p>
+        <button class="buy-btn">Sotib olish</button>
+    </div>
+
+    <div class="product-card">
+        <img src="https://ref2.osonapteka.uz/api/ProductImage/Show/3ca30e22-c7a0-4759-b260-7dbf7aba58d2.png" alt="Product Image 3" class="product-img">
+        <h3 class="product-title">Product Name 3</h3>
+        <p class="product-brand">Brand: Product 3</p>
+        <p class="product-availability"><span class="dot"></span> Mavjud (4)</p>
+        <button class="bonus-btn">+505 kechbek-bonus</button>
+        <p class="product-price">от <b>43,000 UZS</b></p>
+        <button class="buy-btn">Sotib olish</button>
+    </div>
+
+    <div class="product-card">
+        <img src="https://arzonapteka.uz/_next/image?url=https%3A%2F%2Fstorage.arzonapteka.uz%2Farzonapteka%2Fuz%2F2167.jpg&w=256&q=75" alt="Product Image 4" class="product-img">
+        <h3 class="product-title">Product Name 4</h3>
+        <p class="product-brand">Brand: Product 4</p>
+        <p class="product-availability"><span class="dot"></span> Mavjud (4)</p>
+        <button class="bonus-btn">+505 kechbek-bonus</button>
+        <p class="product-price">от <b>350,000 UZS</b></p>
+        <button class="buy-btn">Sotib olish</button>
+    </div>
+
+    <div class="product-card">
+        <img src="https://arzonapteka.uz/_next/image?url=https%3A%2F%2Fstorage.arzonapteka.uz%2Farzonapteka%2Fuz%2F13046.jpg&w=256&q=75" alt="Product Image 5" class="product-img">
+        <h3 class="product-title">Product Name 5</h3>
+        <p class="product-brand">Brand: Product 5</p>
+        <p class="product-availability"><span class="dot"></span> Mavjud (4)</p>
+        <button class="bonus-btn">+505 kechbek-bonus</button>
+        <p class="product-price">от <b>650,000 UZS</b></p>
+        <button class="buy-btn">Sotib olish</button>
+    </div>
+
+    <div class="product-card">
+        <img src="https://main.med24.uz/uploads/drugs/5f4/5f468c2183b5232fa7bbc561989dc87f.jpg" alt="Product Image 6" class="product-img">
+        <h3 class="product-title">Product Name 6</h3>
+        <p class="product-brand">Brand: Product 6</p>
+        <p class="product-availability"><span class="dot"></span> Mavjud (4)</p>
+        <button class="bonus-btn">+505 kechbek-bonus</button>
+        <p class="product-price">от <b>50,000 UZS</b></p>
+        <button class="buy-btn">Sotib olish</button>
+    </div>
+
+    <div class="product-card">
+        <img src="https://aptekaonline.uz/wp-content/uploads/q10makskoenzimkaps40-300x300-optimized.webp" alt="Product Image 7" class="product-img">
+        <h3 class="product-title">Product Name 7</h3>
+        <p class="product-brand">Brand: Product 7</p>
+        <p class="product-availability"><span class="dot"></span> Mavjud (4)</p>
+        <button class="bonus-btn">+505 kechbek-bonus</button>
+        <p class="product-price">от <b>65,000 UZS</b></p>
+        <button class="buy-btn">Sotib olish</button>
+    </div>
+
+    <div class="product-card">
+        <img src="https://aptekaonline.uz/wp-content/uploads/avikludtab10mg30-480x480-optimized.webp" alt="Product Image 8" class="product-img">
+        <h3 class="product-title">Product Name 8</h3>
+        <p class="product-brand">Brand: Product 8</p>
+        <p class="product-availability"><span class="dot"></span> Mavjud (4)</p>
+        <button class="bonus-btn">+505 kechbek-bonus</button>
+        <p class="product-price">от <b>36,000 UZS</b></p>
+        <button class="buy-btn">Sotib olish</button>
+    </div>
+
+    <div class="product-card">
+        <img src="https://aptekaonline.uz/wp-content/uploads/avirolskaps12-300x300-optimized.webp" alt="Product Image 9" class="product-img">
+        <h3 class="product-title">Product Name 9</h3>
+        <p class="product-brand">Brand: Product 9</p>
+        <p class="product-availability"><span class="dot"></span> Mavjud (4)</p>
+        <button class="bonus-btn">+505 kechbek-bonus</button>
+        <p class="product-price">от <b>55,000 UZS</b></p>
+        <button class="buy-btn">Sotib olish</button>
+    </div>
+
+    <div class="product-card">
+        <img src="https://aptekaonline.uz/wp-content/uploads/adaptolkaps300mg20-300x300-optimized.webp" alt="Product Image 10" class="product-img">
+        <h3 class="product-title">Product Name 10</h3>
+        <p class="product-brand">Brand: Product 10</p>
+        <p class="product-availability"><span class="dot"></span> Mavjud (4)</p>
+        <button class="bonus-btn">+505 kechbek-bonus</button>
+        <p class="product-price">от <b>89,000 UZS</b></p>
+        <button class="buy-btn">Sotib olish</button>
+    </div>
+
+    <div class="product-card">
+        <img src="https://aptekaonline.uz/wp-content/uploads/ademtaliofpor400mg5-300x300-optimized.webp" alt="Product Image 11" class="product-img">
+        <h3 class="product-title">Product Name 11</h3>
+        <p class="product-brand">Brand: Product 11</p>
+        <p class="product-availability"><span class="dot"></span> Mavjud (4)</p>
+        <button class="bonus-btn">+505 kechbek-bonus</button>
+        <p class="product-price">от <b>45,000 UZS</b></p>
+        <button class="buy-btn">Sotib olish</button>
+    </div>
+
+    <div class="product-card">
+        <img src="https://aptekaonline.uz/wp-content/uploads/adenuriktab120mg28-300x300-optimized.webp" alt="Product Image 12" class="product-img">
+        <h3 class="product-title">Product Name 12</h3>
+        <p class="product-brand">Brand: Product 12</p>
+        <p class="product-availability"><span class="dot"></span> Mavjud (4)</p>
+        <button class="bonus-btn">+505 kechbek-bonus</button>
+        <p class="product-price">от <b>70,000 UZS</b></p>
+        <button class="buy-btn">Sotib olish</button>
+    </div>
+
+    <div class="product-card">
+        <img src="https://aptekaonline.uz/wp-content/uploads/adeptab30mg30-300x300-optimized.webp" alt="Product Image 13" class="product-img">
+        <h3 class="product-title">Product Name 13</h3>
+        <p class="product-brand">Brand: Product 13</p>
+        <p class="product-availability"><span class="dot"></span> Mavjud (4)</p>
+        <button class="bonus-btn">+505 kechbek-bonus</button>
+        <p class="product-price">от <b>96,000 UZS</b></p>
+        <button class="buy-btn">Sotib olish</button>
+    </div>
+
+    <div class="product-card">
+        <img src="https://aptekaonline.uz/wp-content/uploads/adipintab10mg30-300x300-optimized.webp" alt="Product Image 14" class="product-img">
+        <h3 class="product-title">Product Name 14</h3>
+        <p class="product-brand">Brand: Product 14</p>
+        <p class="product-availability"><span class="dot"></span> Mavjud (4)</p>
+        <button class="bonus-btn">+505 kechbek-bonus</button>
+        <p class="product-price">от <b>36,000 UZS</b></p>
+        <button class="buy-btn">Sotib olish</button>
+    </div>
+</div>
+
+<div id="registrationModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <div class="registration-form">
+            <h2>Ro'yxatdan O'tish</h2>
+            <form id="registerForm" action="#" method="POST">
+                <div class="form-group">
+                    <label for="regName">Ism:</label>
+                    <input type="text" id="regName" required>
+                </div>
+                <div class="form-group">
+                    <label for="regPhone">Telefon raqami:</label>
+                    <input type="tel" id="regPhone" pattern="^\+998\d{9}$" placeholder="+998XX YYY YY YY" required>
+                </div>
+                <div class="form-group">
+                    <label for="regPassword">Parol:</label>
+                    <input type="password" id="regPassword" minlength="8" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirmRegPassword">Parolni takrorlash:</label>
+                    <input type="password" id="confirmRegPassword" required>
+                </div>
+                <button type="submit" class="submit-btn">Ro'yxatdan O'tish</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Modal elementini olish
+    var modal = document.getElementById("registrationModal");
+
+    // Barcha "Sotib olish" tugmalarini olish
+    var buyBtns = document.querySelectorAll(".buy-btn");
+
+    // Yopish tugmasini olish
+    var closeBtn = document.querySelector(".close-btn");
+
+    // Har bir "Sotib olish" tugmasiga hodisa tinglovchisini qo'shish
+    buyBtns.forEach(function(btn) {
+        btn.addEventListener("click", function() {
+            modal.style.display = "block"; // Modal oynani ko'rsatish
+        });
+    });
+
+    // Yopish tugmasini bosganda Modal Oynani yopish
+    closeBtn.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // Foydalanuvchi Modal Oynadan tashqarini bosganda uni yopish
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+
+</body>
+</html>

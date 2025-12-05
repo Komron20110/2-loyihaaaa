@@ -1,0 +1,233 @@
+/* === GLOBAL === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #e8f4ff, #d6ecff);
+  padding-top: 90px;
+  animation: fadeIn 1.2s ease;
+}
+
+/* === PAGE ENTRY ANIMATION === */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* === NAVBAR === */
+.navbar {
+  background: #00796b;
+  padding: 15px 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  gap: 15px;
+  animation: slideDown 0.9s ease;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-25px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.navbar a {
+  background: #ffda08;
+  padding: 10px 25px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+  font-size: 18px;
+  transition: 0.2s;
+  display: inline-block;
+
+  animation: popIn 0.7s ease forwards;
+  opacity: 0;
+}
+
+.navbar a:nth-child(1) { animation-delay: 0.2s; }
+.navbar a:nth-child(2) { animation-delay: 0.35s; }
+.navbar a:nth-child(3) { animation-delay: 0.5s; }
+
+@keyframes popIn {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.navbar a:hover {
+  background: #f5c400;
+  transform: translateY(-2px) scale(1.05);
+}
+
+/* === SLIDER === */
+.slider {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 40px auto;
+  overflow: hidden;
+  border-radius: 12px;
+  border-top: 3px solid #00796b;
+  border-bottom: 3px solid #00796b;
+  box-shadow: 0 0 15px rgba(0, 70, 180, 0.2);
+  animation: slideFade 1.2s ease;
+}
+
+@keyframes slideFade {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.slide {
+  width: 100%;
+  display: none;
+  animation: fade 1s ease-in-out;
+}
+
+.slide.active {
+  display: block;
+}
+
+@keyframes fade {
+  from { opacity: 0.4; }
+  to { opacity: 1; }
+}
+
+/* === PRODUCT KONTEYNER === */
+.product-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+/* === CARD ANIMATION === */
+.card {
+  width: 330px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.1);
+  text-align: center;
+
+  animation: cardIn 0.9s ease forwards;
+  opacity: 0;
+}
+
+.card:nth-child(1) { animation-delay: 0.2s; }
+.card:nth-child(2) { animation-delay: 0.35s; }
+.card:nth-child(3) { animation-delay: 0.5s; }
+.card:nth-child(4) { animation-delay: 0.65s; }
+
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.card img {
+  width: 200px;
+  border-radius: 12px;
+  display: block;
+  margin: auto;
+  transition: 0.3s;
+}
+
+.card:hover img {
+  transform: scale(1.07);
+}
+
+/* === TITLES === */
+.card-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 12px;
+  color: #00796b;
+}
+
+.price {
+  font-size: 22px;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #00796b;
+}
+
+/* === BUY BUTTON ANIMATION === */
+.buy-btn {
+  width: 100%;
+  display: block;
+  margin-top: 12px;
+  padding: 12px;
+  background: #00796b;
+  color: white;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s ease;
+
+  animation: pulse 1.6s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+  100% { transform: scale(1); }
+}
+
+.buy-btn:hover {
+  background: #004d40;
+  transform: scale(1.05);
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .card {
+    width: 90%;
+  }
+
+  .slider {
+    max-width: 95%;
+  }
+}
+
+/* === RASMLAR === */
+.img1 {
+  display: block;
+  margin: 40px auto 10px;
+  width: 500px;
+  border-top: 3px solid #ffd700;
+  border-bottom: 3px solid #ffd700;
+  border-radius: 50px;
+  animation: fadeIn 1s ease;
+}
+
+.img2 {
+  display: block;
+  margin: 20px auto;
+  max-width: 90%;
+  border-radius: 50px;
+  width: 900px;
+  animation: fadeIn 1.3s ease;
+}
+
+.img4,
+.img5 {
+  border-radius: 50px;
+  animation: imgBounce 1s ease;
+}
+
+@keyframes imgBounce {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
