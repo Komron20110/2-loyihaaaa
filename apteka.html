@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Pharm - Ishonchli Onlayn Apteka</title>
+    <!-- Tailwind CSS yuklash -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons (Professional iconlar uchun) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Asosiy shriftni Interga o'rnatamiz */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* Och kulrang fon */
+        }
+        /* Asosiy Ko'k rang */
+        .primary-blue {
+            background-color: #0079c2;
+            transition: background-color 0.3s ease;
+        }
+        .primary-blue:hover {
+            background-color: #005a92;
+        }
+        /* Aksent Yashil rang (CTA uchun) */
+        .accent-green {
+            background-color: #38bdf8;
+            transition: background-color 0.3s ease;
+        }
+        .accent-green:hover {
+            background-color: #0ea5e9;
+        }
+        /* Animatsiya: Hero bo'limi uchun yumshoq kirish */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in-down {
+            animation: fadeInDown 1s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Navbar/Header - Toza va Professional -->
+    <header class="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <!-- Logotip -->
+            <a href="#" class="flex items-center space-x-2 text-2xl font-extrabold text-[#0079c2]">
+                <i data-lucide="heart-handshake" class="w-7 h-7 text-[#ef4444]"></i>
+                <span>ONLINE PHARM</span>
+            </a>
+
+            <!-- Navigatsiya Links -->
+            <nav class="hidden md:flex space-x-6">
+                <a href="apteka.html" class="text-gray-600 hover:text-[#0079c2] font-medium transition duration-200">Bosh Sahifa</a>
+                <a href="tabletkalar.html" class="text-gray-600 hover:text-[#0079c2] font-medium transition duration-200">Tabletkalar</a>
+                <a href="siroplar.html" class="text-gray-600 hover:text-[#0079c2] font-medium transition duration-200">Sirop</a>
+                      <a href="choylar.html" class="text-gray-600 hover:text-[#0079c2] font-medium transition duration-200">Damlamalar</a>
+                <a href="manzillar.html" class="text-gray-600 hover:text-[#0079c2] font-medium transition duration-200">Manzillar</a>
+            </nav>
+
+            <!-- Harakatga Chorlovchi Tugma -->
+            <div class="flex items-center space-x-3">
+                <button class="hidden md:block px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition duration-200 font-semibold">
+                    <i data-lucide="user" class="w-5 h-5 inline-block mr-1"></i> Kirish
+                </button>
+                <button class="md:hidden p-2 rounded-lg text-gray-700 hover:bg-gray-100">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-20">
+        <!-- Hero Section - Asosiy ta'sir ko'rsatuvchi bo'lim -->
+        <section class="container mx-auto px-4 py-16 md:py-24 text-center animate-fade-in-down">
+            <div class="max-w-4xl mx-auto">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight mb-4">
+                    O'zbekistonning <span class="text-[#0079c2]">Ishonchli</span> Onlayn Aptekasi
+                </h1>
+                <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+                    Sertifikatlangan dori vositalari, keng assortiment va mamlakat bo'ylab tezkor yetkazib berish xizmati.
+                </p>
+                <!-- CTA Tugmasi (Harakatga Chorlovchi Tugma) -->
+                <button class="accent-green text-white font-bold py-3 px-8 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-[1.02] transition duration-300 text-lg">
+                    <i data-lucide="search" class="w-6 h-6 inline-block mr-2"></i> Dorilarni Hozir Qidiring
+                </button>
+            </div>
+        </section>
+
+        <!-- Search Bar - Qidiruv paneli -->
+        <section class="container mx-auto px-4 -mt-10 mb-16">
+            <div class="max-w-3xl mx-auto bg-white p-3 rounded-2xl shadow-2xl border-2 border-gray-100 animate-fade-in-down" style="animation-delay: 0.2s;">
+                <div class="flex items-center space-x-3">
+                    <i data-lucide="pill" class="w-6 h-6 text-[#0079c2]"></i>
+                    <input type="text" placeholder="Dori nomini, ta'sirini yoki faol moddasini kiriting..." 
+                           class="flex-grow p-3 text-gray-700 focus:outline-none text-lg">
+                    <button class="primary-blue text-white p-3 rounded-xl">
+                        <i data-lucide="arrow-right" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Afzalliklar Bo'limi -->
+        <section class="container mx-auto px-4 py-12">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Nega bizni tanlaysiz?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Afzallik 1 -->
+                <div class="bg-white p-6 rounded-xl shadow-xl border-t-4 border-[#0079c2] text-center transform hover:scale-[1.03] transition duration-300 animate-fade-in-down" style="animation-delay: 0.4s;">
+                    <i data-lucide="truck" class="w-10 h-10 text-[#0079c2] mx-auto mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Tezkor Yetkazib Berish</h3>
+                    <p class="text-gray-500">Buyurtmalar Toshkent bo'ylab 2 soat ichida, viloyatlarga 24 soatda yetkaziladi.</p>
+                </div>
+                <!-- Afzallik 2 -->
+                <div class="bg-white p-6 rounded-xl shadow-xl border-t-4 border-[#38bdf8] text-center transform hover:scale-[1.03] transition duration-300 animate-fade-in-down" style="animation-delay: 0.6s;">
+                    <i data-lucide="badge-check" class="w-10 h-10 text-[#38bdf8] mx-auto mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">100% Sifat Kafolati</h3>
+                    <p class="text-gray-500">Barcha mahsulotlar sertifikatlangan va to'g'ridan-to'g'ri ishlab chiqaruvchidan olingan.</p>
+                </div>
+                <!-- Afzallik 3 -->
+                <div class="bg-white p-6 rounded-xl shadow-xl border-t-4 border-[#ef4444] text-center transform hover:scale-[1.03] transition duration-300 animate-fade-in-down" style="animation-delay: 0.8s;">
+                    <i data-lucide="wallet" class="w-10 h-10 text-[#ef4444] mx-auto mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Hamyonbop Narxlar</h3>
+                    <p class="text-gray-500">Bizning narxlarimiz oddiy aptekalarga qaraganda ancha foydali.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mashhur Dorilar Bo'limi (Product Container) -->
+        <section class="container mx-auto px-4 py-12">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Eng Mashhur Dorilar</h2>
+            
+            <div id="product-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Mahsulot 1 -->
+                <div class="product-card bg-white p-5 rounded-xl shadow-lg border border-gray-100 transform hover:shadow-2xl transition duration-300 hover:-translate-y-1" style="animation-delay: 1.0s;">
+                    <img src="https://placehold.co/300x200/0079c2/ffffff?text=Dori+A" alt="Dori A" class="w-full h-32 object-cover rounded-lg mb-4">
+                    <h4 class="text-lg font-semibold text-gray-800">Paratsetamol 500mg</h4>
+                    <p class="text-sm text-gray-500 mb-3">Isitma tushiruvchi vosita.</p>
+                    <div class="flex justify-between items-center mt-auto">
+                        <span class="text-2xl font-bold text-[#ef4444]">12,000 UZS</span>
+                        <button class="primary-blue text-white py-2 px-4 rounded-lg text-sm font-medium hover:bg-opacity-90">
+                            Savatga
+                        </button>
+                    </div>
+                </div>
+                <!-- Mahsulot 2 -->
+                <div class="product-card bg-white p-5 rounded-xl shadow-lg border border-gray-100 transform hover:shadow-2xl transition duration-300 hover:-translate-y-1" style="animation-delay: 1.2s;">
+                    <img src="https://placehold.co/300x200/38bdf8/ffffff?text=Vitamin+C" alt="Vitamin C" class="w-full h-32 object-cover rounded-lg mb-4">
+                    <h4 class="text-lg font-semibold text-gray-800">Vitamin C (Askorbin kislota)</h4>
+                    <p class="text-sm text-gray-500 mb-3">Immun tizimini mustahkamlaydi.</p>
+                    <div class="flex justify-between items-center mt-auto">
+                        <span class="text-2xl font-bold text-[#ef4444]">25,500 UZS</span>
+                        <button class="primary-blue text-white py-2 px-4 rounded-lg text-sm font-medium hover:bg-opacity-90">
+                            Savatga
+                        </button>
+                    </div>
+                </div>
+                <!-- Mahsulot 3 -->
+                <div class="product-card bg-white p-5 rounded-xl shadow-lg border border-gray-100 transform hover:shadow-2xl transition duration-300 hover:-translate-y-1" style="animation-delay: 1.4s;">
+                    <img src="https://placehold.co/300x200/0079c2/ffffff?text=Dori+B" alt="Dori B" class="w-full h-32 object-cover rounded-lg mb-4">
+                    <h4 class="text-lg font-semibold text-gray-800">Yod eritmadi 5%</h4>
+                    <p class="text-sm text-gray-500 mb-3">Antiseptik va dezinfeksiyalovchi.</p>
+                    <div class="flex justify-between items-center mt-auto">
+                        <span class="text-2xl font-bold text-[#ef4444]">5,800 UZS</span>
+                        <button class="primary-blue text-white py-2 px-4 rounded-lg text-sm font-medium hover:bg-opacity-90">
+                            Savatga
+                        </button>
+                    </div>
+                </div>
+                <!-- Mahsulot 4 -->
+                <div class="product-card bg-white p-5 rounded-xl shadow-lg border border-gray-100 transform hover:shadow-2xl transition duration-300 hover:-translate-y-1" style="animation-delay: 1.6s;">
+                    <img src="https://placehold.co/300x200/38bdf8/ffffff?text=Dori+C" alt="Dori C" class="w-full h-32 object-cover rounded-lg mb-4">
+                    <h4 class="text-lg font-semibold text-gray-800">Aspirin Forte</h4>
+                    <p class="text-sm text-gray-500 mb-3">Og'riq qoldiruvchi, yallig'lanishga qarshi.</p>
+                    <div class="flex justify-between items-center mt-auto">
+                        <span class="text-2xl font-bold text-[#ef4444]">18,900 UZS</span>
+                        <button class="primary-blue text-white py-2 px-4 rounded-lg text-sm font-medium hover:bg-opacity-90">
+                            Savatga
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="primary-blue text-white font-bold py-3 px-8 rounded-xl text-lg hover:shadow-lg transition duration-300">
+                    Barcha Mahsulotlarni Ko'rish
+                </a>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white mt-16">
+        <div class="container mx-auto px-4 py-8 text-center">
+            <p>&copy; 2024 Online Pharm. Barcha huquqlar himoyalangan.</p>
+            <div class="mt-4 space-x-4">
+                <a href="#" class="text-gray-400 hover:text-[#0079c2]">Kontaktlar</a>
+                <a href="#" class="text-gray-400 hover:text-[#0079c2]">Maxfiylik Siyosati</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Lucide Icons'ni sahifada faollashtirish
+        lucide.createIcons();
+
+        // Kartochkalarni animatsiya qilish uchun JavaScript
+        document.addEventListener('DOMContentLoaded', () => {
+            const productCards = document.querySelectorAll('.product-card');
+            
+            productCards.forEach((card, index) => {
+                // Har bir kartochka uchun alohida kirish animatsiyasini qo'llaymiz
+                card.style.opacity = 0;
+                card.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    card.style.opacity = 1;
+                    card.style.transform = 'translateY(0)';
+                    card.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+                }, 100 + index * 150); // Sekin-asta birin-ketin kirib keladi
+            });
+        });
+    </script>
+</body>
+</html>
